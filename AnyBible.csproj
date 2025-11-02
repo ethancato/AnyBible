@@ -11,6 +11,7 @@
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -21,9 +22,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>1.2.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -90,6 +90,30 @@
     <Compile Include="BibleForm.Designer.cs">
       <DependentUpon>BibleForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MDIParentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIParentForm.Designer.cs">
+      <DependentUpon>MDIParentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotepadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NotepadForm.Designer.cs">
+      <DependentUpon>NotepadForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PassageChildForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PassageChildForm.Designer.cs">
+      <DependentUpon>PassageChildForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PassageLookup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PassageLookup.Designer.cs">
+      <DependentUpon>PassageLookup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -124,6 +148,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BibleForm.resx">
       <DependentUpon>BibleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDIParentForm.resx">
+      <DependentUpon>MDIParentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotepadForm.resx">
+      <DependentUpon>NotepadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PassageChildForm.resx">
+      <DependentUpon>PassageChildForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PassageLookup.resx">
+      <DependentUpon>PassageLookup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -163,6 +199,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="anybible.ico" />
+    <None Include="text_list_numbers.png" />
+    <None Include="text_list_bullets.png" />
+    <None Include="font_increase.png" />
+    <None Include="font_decrease.png" />
+    <None Include="text_underline.png" />
+    <None Include="text_italic.png" />
+    <None Include="text_bold.png" />
+    <None Include="magnifier.png" />
     <None Include="flag_blue.png" />
     <None Include="arrow_refresh.png" />
     <None Include="Resources\AnyBible Logo.png" />

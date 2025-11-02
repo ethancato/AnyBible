@@ -20,7 +20,7 @@ namespace Core_Bible
                 }
             }
             catch { /* ignore if no previous version exists */ }
-            Application.Run(new BibleForm());
+            Application.Run(new MDIParentForm());
         }
     }
 }

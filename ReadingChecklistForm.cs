@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using System.Xml;
@@ -49,6 +50,38 @@ namespace Core_Bible
             "1 Peter","2 Peter","1 John","2 John","3 John",
             "Jude","Revelation"
         };
+
+        public void ApplyDarkMode(bool enabled)
+        {
+            Color back = enabled ? Color.FromArgb(34, 40, 49) : SystemColors.Control;
+            Color fore = enabled ? Color.FromArgb(230, 230, 230) : SystemColors.ControlText;
+
+            this.BackColor = back;
+            this.ForeColor = fore;
+
+            for (int i = 0; i < this.Controls.Count; i++)
+            {
+                Control c = this.Controls[i];
+                try { c.BackColor = back; } catch { }
+                try { c.ForeColor = fore; } catch { }
+            }
+
+            // ProgressBar color (works when VisualStyles are off)
+            if (this.rcProgressBar != null)
+            {
+                this.rcProgressBar.ForeColor = enabled
+                    ? Color.FromArgb(255, 135, 40)  // dark mode bar color
+                    : Color.FromArgb(0, 120, 215);  // light/default bar color
+            }
+        }
+
+        protected override void OnShown(System.EventArgs e)
+        {
+            base.OnShown(e);
+            // initialize to current global state if you have it; otherwise set light by default
+            ApplyDarkMode(false);
+        }
+
 
         public ReadingChecklistForm()
         {
